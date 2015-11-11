@@ -14,6 +14,7 @@ class finished: UIViewController {
     var quizTitle : String?
     var finishedCorrect : Int = 0
     var finishedTotal : Int = 0
+    var desc : String = " "
     @IBOutlet weak var fTitle: UILabel!
     @IBOutlet weak var scoreFinished: UILabel!
     @IBOutlet weak var descriptFinished: UILabel!
@@ -21,7 +22,14 @@ class finished: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fTitle.text! = quizTitle!
-        descriptFinished.text! = "Congratulations, you have finished!"
+        if (finishedCorrect == 4) {
+            desc = "Perfect! You have aced the quiz"
+        } else if (finishedCorrect == 3) {
+            desc = "Almost! You're have this quiz"
+        } else {
+            desc = "Please try again"
+        }
+        descriptFinished.text! = desc
         scoreFinished.text! = "You have answered \(finishedCorrect) correctly out of \(finishedTotal) questions"
         // Do any additional setup after loading the view, typically from a nib.
     }

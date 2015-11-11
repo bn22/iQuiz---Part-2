@@ -83,23 +83,25 @@ class questions: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (selected) {
-            if (segue.identifier == "submitQuestions" ) {
-                var DestViewController1 : answers = segue.destinationViewController as! answers
-                DestViewController1.quizTopic = quizT!
-                DestViewController1.givenAnswer = answer
-                DestViewController1.givenArray = questionsAnswerArray
-                DestViewController1.givenCorrect = correct
-                DestViewController1.givenCount = count
-                DestViewController1.givenTotal = total
-            } else if (segue.identifier == "questionsBack") {
-                var DestViewController3 : ViewController = segue.destinationViewController as! ViewController
-            }
+        if (segue.identifier == "questionsBack") {
+            var DestViewController3 : ViewController = segue.destinationViewController as! ViewController
         } else {
-            let alert = UIAlertController(title: "Alert", message: "Click an Option", preferredStyle: UIAlertControllerStyle.Alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-            alert.addAction(ok);
-            self.presentViewController(alert, animated: true, completion: nil)
+            if (selected) {
+                if (segue.identifier == "submitQuestions" ) {
+                    var DestViewController1 : answers = segue.destinationViewController as! answers
+                    DestViewController1.quizTopic = quizT!
+                    DestViewController1.givenAnswer = answer
+                    DestViewController1.givenArray = questionsAnswerArray
+                    DestViewController1.givenCorrect = correct
+                    DestViewController1.givenCount = count
+                    DestViewController1.givenTotal = total
+                }
+            } else {
+                let alert = UIAlertController(title: "Alert", message: "Click an Option", preferredStyle: UIAlertControllerStyle.Alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                alert.addAction(ok);
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
         }
     }
 }

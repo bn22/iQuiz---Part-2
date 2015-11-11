@@ -65,9 +65,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         if (indexPath!.row == 0) {
             questionsArray = [
                 ["Question" : "What is the sum of 4 and 9?", "Answer1" : "10", "Answer2" : "13", "Answer3" : "15", "Answer4" : "17", "Correct Answer" : "13"],
-                ["Question" : "What is the answer of 1 * 1?", "Answer1" : "0", "Answer2" : "1", "Answer3" : "2", "Answer4" : "3", "Correct Answer" : "1"],
+                ["Question" : "What is the answer of 1 times 1?", "Answer1" : "0", "Answer2" : "1", "Answer3" : "2", "Answer4" : "3", "Correct Answer" : "1"],
                 ["Question" : "What is the difference between 10 and 5?", "Answer1" : "2", "Answer2" : "5", "Answer3" : "7", "Answer4" : "10", "Correct Answer" : "5"],
-                ["Question" : "What is the answer of 12 / 2?", "Answer1" : "3", "Answer2" : "6", "Answer3" : "7", "Answer4" : "12", "Correct Answer" : "6"]
+                ["Question" : "What is the answer of 12 divided by 2?", "Answer1" : "3", "Answer2" : "6", "Answer3" : "7", "Answer4" : "12", "Correct Answer" : "6"]
             ];
             quizName = "Mathematics"
         } else if (indexPath!.row == 1) {
